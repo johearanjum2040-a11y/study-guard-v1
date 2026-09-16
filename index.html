@@ -39,7 +39,7 @@
                     <div class="flex gap-2">
                         <select id="subjectSelect" class="bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-300 focus:outline-none focus:border-indigo-500">
                             <option value="Bengali">📚 Bengali</option>
-                            <option value="English">🇬🇧 English</option>
+                            <option value="English">✍️ English</option>
                             <option value="Biology">🧬 Biology</option>
                             <option value="Physics">⚛️ Physics</option>
                             <option value="Chemistry">🧪 Chemistry</option>
@@ -75,7 +75,7 @@
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                     <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700/60">
                         <span class="block text-xs font-semibold text-slate-500 uppercase">Focus Time</span>
-                        <span class="text-xl font-bold text-slate-200 mt-1">42 mins</span>
+                        <span id="analyticsTotalTime" class="text-xl font-bold text-slate-200 mt-1">42 mins</span>
                     </div>
                     <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700/60">
                         <span class="block text-xs font-semibold text-slate-500 uppercase">Daily Goal</span>
@@ -102,34 +102,13 @@
                         </span>
                     </div>
                     <div class="grid grid-cols-7 gap-2 text-center">
-                        <div class="bg-emerald-950/40 border border-emerald-800 p-2 rounded-xl">
-                            <span class="block text-[10px] text-slate-500 uppercase font-bold">Mon</span>
-                            <span class="text-sm">✅</span>
-                        </div>
-                        <div class="bg-emerald-950/40 border border-emerald-800 p-2 rounded-xl">
-                            <span class="block text-[10px] text-slate-500 uppercase font-bold">Tue</span>
-                            <span class="text-sm">✅</span>
-                        </div>
-                        <div class="bg-emerald-950/40 border border-emerald-800 p-2 rounded-xl">
-                            <span class="block text-[10px] text-slate-500 uppercase font-bold">Wed</span>
-                            <span class="text-sm">✅</span>
-                        </div>
-                        <div id="calToday" class="bg-indigo-950/60 border-2 border-indigo-500 p-2 rounded-xl ring-2 ring-indigo-500/20">
-                            <span class="block text-[10px] text-indigo-400 uppercase font-bold">Thu</span>
-                            <span id="calTodayStatus" class="text-sm">⏳</span>
-                        </div>
-                        <div class="bg-slate-900/40 border border-slate-700 p-2 rounded-xl">
-                            <span class="block text-[10px] text-slate-500 uppercase font-bold">Fri</span>
-                            <span class="text-sm text-slate-600">-</span>
-                        </div>
-                        <div class="bg-slate-900/40 border border-slate-700 p-2 rounded-xl">
-                            <span class="block text-[10px] text-slate-500 uppercase font-bold">Sat</span>
-                            <span class="text-sm text-slate-600">-</span>
-                        </div>
-                        <div class="bg-slate-900/40 border border-slate-700 p-2 rounded-xl">
-                            <span class="block text-[10px] text-slate-500 uppercase font-bold">Sun</span>
-                            <span class="text-sm text-slate-600">-</span>
-                        </div>
+                        <div class="bg-emerald-950/40 border border-emerald-800 p-2 rounded-xl"><span class="block text-[10px] text-slate-500 uppercase font-bold">Mon</span><span class="text-sm">✅</span></div>
+                        <div class="bg-emerald-950/40 border border-emerald-800 p-2 rounded-xl"><span class="block text-[10px] text-slate-500 uppercase font-bold">Tue</span><span class="text-sm">✅</span></div>
+                        <div class="bg-emerald-950/40 border border-emerald-800 p-2 rounded-xl"><span class="block text-[10px] text-slate-500 uppercase font-bold">Wed</span><span class="text-sm">✅</span></div>
+                        <div id="calToday" class="bg-indigo-950/60 border-2 border-indigo-500 p-2 rounded-xl ring-2 ring-indigo-500/20"><span class="block text-[10px] text-indigo-400 uppercase font-bold">Thu</span><span id="calTodayStatus" class="text-sm">⏳</span></div>
+                        <div class="bg-slate-900/40 border border-slate-700 p-2 rounded-xl"><span class="block text-[10px] text-slate-500 uppercase font-bold">Fri</span><span class="text-sm text-slate-600">-</span></div>
+                        <div class="bg-slate-900/40 border border-slate-700 p-2 rounded-xl"><span class="block text-[10px] text-slate-500 uppercase font-bold">Sat</span><span class="text-sm text-slate-600">-</span></div>
+                        <div class="bg-slate-900/40 border border-slate-700 p-2 rounded-xl"><span class="block text-[10px] text-slate-500 uppercase font-bold">Sun</span><span class="text-sm text-slate-600">-</span></div>
                     </div>
                 </div>
             </section>
@@ -142,3 +121,11 @@
                     <h3 class="text-lg font-bold text-slate-200">✨ Level Progress</h3>
                     <span id="levelBadge" class="bg-indigo-900 text-indigo-300 font-bold text-xs px-2.5 py-1 rounded-full border border-indigo-700">LVL 1</span>
                 </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between text-xs text-slate-400">
+                        <span id="currentXpText">120 XP</span>
+                        <span>500 XP to Level Up</span>
+                    </div>
+                    <div class="w-full bg-slate-900 h-3 rounded-full p-0.5 border border-slate-700 overflow-hidden">
+                        <div id="xpProgressBar" class="bg-gradient-to-r from-indigo-500 to-purple-500 h-full rounded-full transition-all duration-300" style="width: 24%"></div>
+                    </div>
